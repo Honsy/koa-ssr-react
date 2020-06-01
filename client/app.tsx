@@ -1,15 +1,25 @@
 import * as React from 'react'
 import { Switch,Route} from 'react-router-dom'
-import Home from './pages/home'
-import Test from './pages/test'
+import routerConfig from './router.config'
 
-function app() {
-    return (
-        <Switch>
-            <Route exact path="/" component = {Home}></Route>
-            <Route path="/test" component = {Test}></Route>
-        </Switch>
-    )
+class App extends React.Component{
+    constructor(props:any){
+        super(props)
+    }
+
+    render(){
+        return (
+            <Switch>
+                {
+                    routerConfig.map((item,index)=>{
+                        return (
+                            <Route path={item.path} key={index} exact={item.exact} component={item.component}></Route>
+                        )
+                    })
+                }
+            </Switch>
+        )
+    }
 }
 
-export default app
+export default App

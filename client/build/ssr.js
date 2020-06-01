@@ -95,7 +95,19 @@ module.exports =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst home_1 = __webpack_require__(/*! ./pages/home */ \"./client/pages/home.tsx\");\r\nconst test_1 = __webpack_require__(/*! ./pages/test */ \"./client/pages/test.tsx\");\r\nfunction app() {\r\n    return (React.createElement(react_router_dom_1.Switch, null,\r\n        React.createElement(react_router_dom_1.Route, { exact: true, path: \"/\", component: home_1.default }),\r\n        React.createElement(react_router_dom_1.Route, { path: \"/test\", component: test_1.default })));\r\n}\r\nexports.default = app;\r\n\n\n//# sourceURL=webpack:///./client/app.tsx?");
+eval("\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];\r\n    result[\"default\"] = mod;\r\n    return result;\r\n};\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst router_config_1 = __importDefault(__webpack_require__(/*! ./router.config */ \"./client/router.config.tsx\"));\r\nclass App extends React.Component {\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n    render() {\r\n        return (React.createElement(react_router_dom_1.Switch, null, router_config_1.default.map((item, index) => {\r\n            return (React.createElement(react_router_dom_1.Route, { path: item.path, key: index, exact: item.exact, component: item.component }));\r\n        })));\r\n    }\r\n}\r\nexports.default = App;\r\n\n\n//# sourceURL=webpack:///./client/app.tsx?");
+
+/***/ }),
+
+/***/ "./client/ga-provider.tsx":
+/*!********************************!*\
+  !*** ./client/ga-provider.tsx ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];\r\n    result[\"default\"] = mod;\r\n    return result;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nlet ga = {};\r\nconst context = React.createContext(ga);\r\nfunction GAProvider(props) {\r\n    return React.createElement(context.Provider, { value: props.data }, props.children);\r\n}\r\nexports.default = GAProvider;\r\nGAProvider.context = context;\r\n\n\n//# sourceURL=webpack:///./client/ga-provider.tsx?");
 
 /***/ }),
 
@@ -107,7 +119,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nco
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nclass Home extends React.Component {\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n    render() {\r\n        return (React.createElement(\"div\", null, \"Home\"));\r\n    }\r\n}\r\nexports.default = Home;\r\n\n\n//# sourceURL=webpack:///./client/pages/home.tsx?");
+eval("\r\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\r\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\r\n    return new (P || (P = Promise))(function (resolve, reject) {\r\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\r\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\r\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\r\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\r\n    });\r\n};\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];\r\n    result[\"default\"] = mod;\r\n    return result;\r\n};\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nconst ga_provider_1 = __importDefault(__webpack_require__(/*! ./../ga-provider */ \"./client/ga-provider.tsx\"));\r\nclass Home extends React.Component {\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n    // 数据获取\r\n    static initData(params) {\r\n        return __awaiter(this, void 0, void 0, function* () {\r\n            return { content: \"首页\" };\r\n        });\r\n    }\r\n    render() {\r\n        const { content } = this.context;\r\n        return (React.createElement(\"div\", null,\r\n            \"Home\",\r\n            content));\r\n    }\r\n}\r\nexports.default = Home;\r\nHome.contextType = ga_provider_1.default.context;\r\nHome.title = \"我是首页啊\";\r\n\n\n//# sourceURL=webpack:///./client/pages/home.tsx?");
 
 /***/ }),
 
@@ -119,7 +131,19 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nco
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nclass Test extends React.Component {\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n    render() {\r\n        return (React.createElement(\"div\", null, \"Test\"));\r\n    }\r\n}\r\nexports.default = Test;\r\n\n\n//# sourceURL=webpack:///./client/pages/test.tsx?");
+eval("\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];\r\n    result[\"default\"] = mod;\r\n    return result;\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nclass Test extends React.Component {\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n    render() {\r\n        return (React.createElement(\"div\", null, \"Test\"));\r\n    }\r\n}\r\nexports.default = Test;\r\n\n\n//# sourceURL=webpack:///./client/pages/test.tsx?");
+
+/***/ }),
+
+/***/ "./client/router.config.tsx":
+/*!**********************************!*\
+  !*** ./client/router.config.tsx ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst home_1 = __importDefault(__webpack_require__(/*! ./pages/home */ \"./client/pages/home.tsx\"));\r\nconst test_1 = __importDefault(__webpack_require__(/*! ./pages/test */ \"./client/pages/test.tsx\"));\r\nexports.default = [\r\n    {\r\n        path: \"/\",\r\n        exact: true,\r\n        component: home_1.default\r\n    }, {\r\n        path: \"/test\",\r\n        exact: true,\r\n        component: test_1.default\r\n    }\r\n];\r\n\n\n//# sourceURL=webpack:///./client/router.config.tsx?");
 
 /***/ }),
 
@@ -131,7 +155,7 @@ eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nco
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst server_1 = __webpack_require__(/*! react-dom/server */ \"./node_modules/react-dom/server.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst app_1 = __webpack_require__(/*! ./app */ \"./client/app.tsx\");\r\nfunction ssr(data) {\r\n    var html;\r\n    const context = {};\r\n    switch (data.componentName) {\r\n        case 'SPA':\r\n            html = server_1.renderToString(React.createElement(react_router_dom_1.StaticRouter, { location: data.data.url, context: context },\r\n                React.createElement(app_1.default, null)));\r\n            break;\r\n        default:\r\n            break;\r\n    }\r\n    return { html: html };\r\n}\r\nexports.default = ssr;\r\n\n\n//# sourceURL=webpack:///./client/ssr.tsx?");
+eval("\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];\r\n    result[\"default\"] = mod;\r\n    return result;\r\n};\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nconst server_1 = __webpack_require__(/*! react-dom/server */ \"./node_modules/react-dom/server.js\");\r\nconst react_router_dom_1 = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\r\nconst app_1 = __importDefault(__webpack_require__(/*! ./app */ \"./client/app.tsx\"));\r\nfunction ssr(data) {\r\n    var html;\r\n    const context = {};\r\n    switch (data.componentName) {\r\n        case 'SPA':\r\n            html = server_1.renderToString(React.createElement(react_router_dom_1.StaticRouter, { location: data.data.url, context: context },\r\n                React.createElement(app_1.default, null)));\r\n            break;\r\n        default:\r\n            break;\r\n    }\r\n    return { html: html };\r\n}\r\nexports.default = ssr;\r\n\n\n//# sourceURL=webpack:///./client/ssr.tsx?");
 
 /***/ }),
 
@@ -375,7 +399,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
